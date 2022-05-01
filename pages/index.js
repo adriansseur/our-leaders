@@ -5,6 +5,7 @@ import Map from '../components/Map'
 import Executive from '../components/Executive'
 import Judicial from '../components/Judicial'
 import Legislative from '../components/Legislative'
+import Place from '../components/Place'
 
 export default function Home() {
 
@@ -19,6 +20,8 @@ export default function Home() {
         </Head>
 
         <main className={styles.main}>
+            <Place  
+                selectedPlace={selectedPlace}/>    
             <Executive />
             <Judicial/>
             <Map 

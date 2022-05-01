@@ -6,18 +6,17 @@ export default function Legislative({selectedPlace}) {
     
     const [branchesData, setBranchesData] = React.useState(data)
 
-    let processedSelectedPlace
+    let selectedPlaceName
     if (selectedPlace !== null) {
-        processedSelectedPlace = selectedPlace.replace("-", "")
+        selectedPlaceName = selectedPlace.replaceAll("-", "")
     }
 
     return (
         <div className={styles.legislative}>
             <h6 className={styles.branchTitle}>Legislative</h6>
-            {selectedPlace && <p>{selectedPlace}</p>}
             {selectedPlace &&
                 <p>
-                    {branchesData.legislative.state[processedSelectedPlace]}
+                    {branchesData.legislative.state[selectedPlaceName]}
                 </p>
             }
         </div>
