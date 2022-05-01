@@ -6,10 +6,12 @@ import Executive from '../components/Executive'
 import Judicial from '../components/Judicial'
 import Legislative from '../components/Legislative'
 import Place from '../components/Place'
+import data from '../data/branchesData'
 
 export default function Home() {
 
     const [selectedPlace, setSelectedPlace] = React.useState(null)
+    const [branchesData, setBranchesData] = React.useState(data)
 
     return (
         <div className={styles.container}>
@@ -20,16 +22,16 @@ export default function Home() {
         </Head>
 
         <main className={styles.main}>
-            <Place  
-                selectedPlace={selectedPlace}/>    
-            <Executive />
-            <Judicial/>
+            <Place selectedPlace={selectedPlace} />    
+            <Executive branchesData={branchesData} />
+            <Judicial branchesData={branchesData} />
             <Map 
                 selectedPlace={selectedPlace}
                 setSelectedPlace={setSelectedPlace}
             />
             <Legislative
-                selectedPlace={selectedPlace}
+                    selectedPlace={selectedPlace}
+                    branchesData={branchesData}
             />
         </main>
 

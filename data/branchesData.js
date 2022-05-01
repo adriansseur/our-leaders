@@ -1,31 +1,13 @@
-// export default [
-//     {
-//         executive: {
-//             members: 2
-//         },
-//     },
-//     {
-//         judicial: {
-//             members: 9
-//         }
-//     },
-//     {
-//         legislative: {
-//             members: 491
-//         }
-//     }
-// ]
-
 export default {
         executive: {
-            numberOfMembers: 2
+            amountOfMembers: 2
         },
         judicial: {
-            numberOfMembers: 9
+            amountOfMembers: 9
         },
         legislative: {
-            numberOfMembers: 491,
-            state: {
+            amountOfMembers: 491,
+            amountPerState: {
                 Alabama: 9,
                 Alaska: 3,
                 AmericanSamoa: 1,

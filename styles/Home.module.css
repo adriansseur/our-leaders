@@ -21,6 +21,10 @@
   grid-column: 1 / -1;
 }
 
+.branchTitle {
+  margin: 0;
+}
+
 .executive,
 .judicial,
 .legislative {
@@ -33,8 +37,16 @@
   grid-column: 1 / -1;
 }
 
-.branchTitle {
-  margin: 0;
+.legislativeMembers {
+  display: grid;
+  grid-template: repeat(8, 1fr) / repeat(7, 1fr);
+}
+
+.test {
+  border: 1px solid;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
 }
 
 .footer {

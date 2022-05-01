@@ -1,10 +1,7 @@
 import React from 'react'
 import styles from '../styles/Home.module.css'
-import data from '../data/branchesData'
 
-export default function Legislative({selectedPlace}) {
-    
-    const [branchesData, setBranchesData] = React.useState(data)
+export default function Legislative({selectedPlace, branchesData}) {
 
     let selectedPlaceName
     if (selectedPlace !== null) {
@@ -13,12 +10,15 @@ export default function Legislative({selectedPlace}) {
 
     return (
         <div className={styles.legislative}>
-            <h6 className={styles.branchTitle}>Legislative</h6>
-            {selectedPlace &&
-                <p>
-                    {branchesData.legislative.state[selectedPlaceName]}
-                </p>
-            }
+            <h6 className={styles.branchTitle}>
+                Legislative: {
+                    selectedPlace === null ?
+                        0 :
+                        branchesData.legislative.amountPerState[selectedPlaceName]
+                } of national total ({branchesData.legislative.amountOfMembers})
+            </h6>
+            <div className={styles.legislativeMembers}>
+            </div>
         </div>
     )
 }
