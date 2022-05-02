@@ -25,7 +25,7 @@ export default function Legislative({selectedPlace, branchesData}) {
                     <p className={styles.memberName}>{member.name}</p>
                 </div>
             ))
-        // sorting of memberElements into sentaros and representatives
+        // sorting of memberElements into senators and representatives
         for (let i of memberElements) {
             if (i.props.title === "Senator") {
                 memberSenators.push(i)
@@ -34,7 +34,7 @@ export default function Legislative({selectedPlace, branchesData}) {
             }
         }
     }
-    
+
     return (
         <div className={styles.legislative}>
             <h6 className={styles.branchTitle}>
@@ -53,22 +53,13 @@ export default function Legislative({selectedPlace, branchesData}) {
                         </div>
                         <div className="representatives">
                             <p className={styles.representativesTitle}>Representatives</p>
-                            {memberRepresentatives}
+                            <div className={styles.representativesBox}>
+                                {memberRepresentatives}
+                            </div>
                         </div>
                     </>
                 }
             </div>
-            <style jsx>{`
-                .representatives {
-                    display: grid;
-                    grid-template: auto repeat(${
-                // number of rows based upon number of representatives
-                Math.ceil((memberRepresentatives.length / 10))*10 / 5
-            }, 1fr) / repeat(5, 1fr);
-                    gap: 0.25rem;
-                }
-                `}
-            </style>
         </div>
     )
 }
