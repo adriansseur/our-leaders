@@ -18,8 +18,8 @@ export default function Legislative({selectedPlace, branchesData}) {
                     <Image
                         className={styles.memberImage}
                         src={member.src}
-                        height={50}
-                        width={50}
+                        height={"100%"}
+                        width={"100%"}
                         alt={member.name}
                     />
                     <p className={styles.memberName}>{member.name}</p>
@@ -34,7 +34,7 @@ export default function Legislative({selectedPlace, branchesData}) {
             }
         }
     }
-
+    
     return (
         <div className={styles.legislative}>
             <h6 className={styles.branchTitle}>
@@ -51,13 +51,24 @@ export default function Legislative({selectedPlace, branchesData}) {
                             <p className={styles.senatorsTitle}>Senators</p>
                             {memberSenators}
                         </div>
-                        <div className={styles.representatives}>
+                        <div className="representatives">
                             <p className={styles.representativesTitle}>Representatives</p>
                             {memberRepresentatives}
                         </div>
                     </>
                 }
             </div>
+            <style jsx>{`
+                .representatives {
+                    display: grid;
+                    grid-template: auto repeat(${
+                // number of rows based upon number of representatives
+                Math.ceil((memberRepresentatives.length / 10))*10 / 5
+            }, 1fr) / repeat(5, 1fr);
+                    gap: 0.25rem;
+                }
+                `}
+            </style>
         </div>
     )
 }

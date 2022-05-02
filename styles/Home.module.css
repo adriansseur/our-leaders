@@ -29,7 +29,6 @@
 .judicial,
 .legislative {
   border: 1px solid;
-  height: 100%;
   padding: 0.5rem;
 }
 
@@ -39,9 +38,6 @@
 
 .legislativeMembers {
   margin-top: 1rem;
-  /* display: grid;
-  grid-template: repeat(8, 1fr) / repeat(6, 1fr);
-  gap: 0.25rem; */
 }
 
 .senatorsTitle,
@@ -53,13 +49,7 @@
 
 .senators {
   display: grid;
-  grid-template: auto auto / auto auto;
-  gap: 0.25rem;
-}
-
-.representatives {
-  display: grid;
-  grid-template: auto repeat(7, 1fr) / repeat(5, 1fr);
+  grid-template: auto / repeat(5, 1fr);
   gap: 0.25rem;
 }
 
@@ -68,6 +58,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .memberImage {
@@ -77,8 +68,7 @@
 
 .memberName {
   margin: 0;
-  /* text-align: center; */
-  font-size: 0.5rem;
+  font-size: 1%;
   height: 2rem;
 }
 

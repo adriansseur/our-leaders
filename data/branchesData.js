@@ -51,7 +51,7 @@ export default {
                             src: "/media/images/shelby-richard-c.jpg" 
                         },
                         { 
-                            name: "Tuberville, Tommy,",
+                            name: "Tuberville, Tommy",
                             title: "Senator",
                             src: "/media/images/tuberville-tommy.jpg" 
                         }
